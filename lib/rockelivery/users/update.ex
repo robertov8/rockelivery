@@ -3,6 +3,8 @@ defmodule Rockelivery.User.Update do
   alias Rockelivery.{Error, Repo, User}
 
   def call(%{"id" => id} = params) do
+    IO.inspect(params)
+
     case UUID.cast(id) do
       :error -> {:error, Error.build_id_format_error()}
       {:ok, _uuid} -> update(params)
@@ -16,7 +18,7 @@ defmodule Rockelivery.User.Update do
     end
   end
 
-  def do_update(user, params) do
+  defp do_update(user, params) do
     user
     |> User.changeset(params)
     |> Repo.update()
