@@ -13,7 +13,7 @@ defmodule Rockelivery.Item do
 
   @derive {Jason.Encoder, only: @required_params ++ [:id]}
 
-  schema "orders" do
+  schema "items" do
     field :category, Enum, values: @items_categories
     field :description, :string
     field :price, :decimal
