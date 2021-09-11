@@ -1,4 +1,4 @@
-defmodule Rockelivery.User.Get do
+defmodule Rockelivery.Users.Get do
   alias Rockelivery.{Error, Repo, User}
 
   def by_id(id) do
