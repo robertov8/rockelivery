@@ -3,14 +3,16 @@ defmodule RockeliveryWeb.UsersController do
 
   alias Rockelivery.User
   alias RockeliveryWeb.FallbackController
+  alias RockeliveryWeb.Auth.Guardian
 
   action_fallback FallbackController
 
   def create(conn, params) do
-    with {:ok, %User{} = user} <- Rockelivery.create_user(params) do
+    with {:ok, %User{} = user} <- Rockelivery.create_user(params),
+         {:ok, token, _claims} <- Guardian.encode_and_sign(user) do
       conn
       |> put_status(:created)
-      |> render("create.json", user: user)
+      |> render("create.json", token: token, user: user)
     end
   end
 
