@@ -1,4 +1,6 @@
 # Rockelivery
+[![codecov](https://codecov.io/gh/robertov8/rockelivery/branch/main/graph/badge.svg?token=A1UK1S8GPJ)](https://codecov.io/gh/robertov8/rockelivery)
+
 
 To start your Phoenix server:
 
