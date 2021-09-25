@@ -2,8 +2,7 @@ defmodule Rockelivery.ViaCep.Client do
   use Tesla
 
   alias Tesla.Env
-  alias Rockelivery.Error
-  alias Rockelivery.ViaCep.Behaviour
+  alias Rockelivery.{Error, ViaCep.Behaviour}
 
   @behaviour Behaviour
 
